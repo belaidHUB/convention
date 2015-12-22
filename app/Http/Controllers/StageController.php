@@ -24,6 +24,8 @@ class StageController extends AppBaseController
 	{
 		$this->stageRepository = $stageRepo;
 		$this->url = $url;
+		//$this->middleware('auth',['only' => ['index','show','edit']]);
+		$this->middleware('auth',['except' => ['create','store']]);
 	}
 
 	/**
@@ -168,19 +170,28 @@ class StageController extends AppBaseController
 		}
 
 		//$stage = $this->stageRepository->update($stage, $request->all());
-		if($stage->etat==0)
-               $stage->etat=1;
-           else
-           	   $stage->etat=0;
+		if($stage->etat==0){
+               //demande de signature
+			   $stage->etat=1;
+           }
+        else if($stage->etat==1){
+               //signature 
+               $stage->etat=2;
+               $stage->save();
+               // send email                
+				Flash::success('message envoyé.'.$stage->nom.' '.$stage->prenom);
+				$email=$stage->email;
+				Mail::send('emails.contact', ['email' => $email], function($message) use ($email)
+				{
+					$message->to($email)->subject('Votre Convention de stage est prête');
+				});
+           }
+        else if($stage->etat==2){
+        	   //récupérer la demande
+               $stage->etat=3;
+           }
         $stage->save();
-        $email=$stage->email;
-		Flash::message('Stage updated successfully.');
-		
-		Mail::send('emails.contact', ['email' => $email], function($message) use ($email)
-		{
-			$message->to($email)->subject('Votre Convention de stage est prête');
-		});
-
+        //Flash::message('Stage updated successfully.');
 		return redirect(route('stages.index'));
 	}
 
