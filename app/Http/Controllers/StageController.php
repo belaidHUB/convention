@@ -10,6 +10,7 @@ use Flash;
 use PDF;
 use DB;
 use Illuminate\Routing\UrlGenerator;
+use Mail;
 
 class StageController extends AppBaseController
 {
@@ -172,7 +173,13 @@ class StageController extends AppBaseController
            else
            	   $stage->etat=0;
         $stage->save();
+        $email=$stage->email;
 		Flash::message('Stage updated successfully.');
+		
+		Mail::send('emails.contact', ['email' => $email], function($message) use ($email)
+		{
+			$message->to($email)->subject('Votre Convention de stage est prête');
+		});
 
 		return redirect(route('stages.index'));
 	}
