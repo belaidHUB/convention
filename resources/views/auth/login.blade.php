@@ -1,3 +1,6 @@
+@extends('app')
+
+@section('content')
 <!-- resources/views/auth/login.blade.php -->
 
 <form method="POST" action="{{ url('auth/login')}}">
@@ -21,3 +24,4 @@
         <button type="submit">Login</button>
     </div>
 </form>
+@endsection
