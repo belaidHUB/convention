@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Convention de stage</title>
     </head>
-    <body>
-        
+    <body>    
+              Votre Convention de stage est prête <br>
 
-                rah lconvention dialk wslaaat
-          
+              Faculté des Sciences et Techniques Marrakech fst
     </body>
 </html>

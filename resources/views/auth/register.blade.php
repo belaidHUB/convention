@@ -1,3 +1,6 @@
+@extends('app')
+
+@section('content')
 <form method="POST" action="{{ url('auth/register')}}">
     {!! csrf_field() !!}
 
@@ -25,3 +28,5 @@
         <button type="submit">Register</button>
     </div>
 </form>
+
+@endsection

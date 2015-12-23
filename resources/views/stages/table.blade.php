@@ -25,7 +25,7 @@
                      
                     @foreach($stages as $stage)
                         <tr>
-                            <td>{!! $stage->nom !!}</td>
+                    <td>{!! $stage->nom !!}</td>
 					<td>{!! $stage->prenom !!}</td>
 					<td>{!! $stage->cne !!}</td>
 					<td>{!! $stage->organisme !!}</td>
@@ -36,10 +36,14 @@
 					<td>{!! $stage->debut !!}</td>
 					<td>{!! $stage->fin !!}</td>
 					<td>
-                     @if($stage->etat==1)
-                         <a href="{!! route('stages.update_etat', [$stage->id]) !!}"><span style="color: #518900" class="glyphicon glyphicon-ok"></span></a>
-                    @else
+                    @if($stage->etat==0)
                          <a href="{!! route('stages.update_etat', [$stage->id]) !!}"><span style="color: #FF0000" class="glyphicon glyphicon-refresh"></span></a>
+                    @elseif($stage->etat==1)
+                         <a href="{!! route('stages.update_etat', [$stage->id]) !!}"><span style="color: #FF0000" class="glyphicon glyphicon-envelope"></span></a>
+                    @elseif($stage->etat==2)
+                         <a href="{!! route('stages.update_etat', [$stage->id]) !!}"><span style="color: #518900" class="glyphicon glyphicon-envelope"></span></a>
+                    @elseif($stage->etat==3)
+                         <a href="{!! route('stages.update_etat', [$stage->id]) !!}"><span style="color: #518900" class="glyphicon glyphicon-ok"></span></a>
                     @endif 
                     </td>
 					<td>{!! $stage->type !!}</td>

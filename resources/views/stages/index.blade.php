@@ -36,7 +36,9 @@
         <div class="row">
             <h1 class="pull-left">Stages</h1>
             <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('stages.create') !!}">Add New</a>
+            <a class="btn btn-danger pull-right" style="margin-top: 25px" href="{{ url('auth/logout')}}">logout</a>
         </div>
+
         <div >
            {!! Form::text('Nom_serch', null, ['class' => 'form-control select-type']) !!}
         </div>
