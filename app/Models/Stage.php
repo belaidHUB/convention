@@ -35,11 +35,11 @@ class Stage extends Model
 		"cne" => "required",
 		"organisme" => "required",
 		"adresse" => "required",
-		"tel_org" => "required",
-		"portable" => "required",
+		/*"tel_org" => "required",*/
+		/*"portable" => "required",*/
+		"fin" => "required|date_format:Y-m-d|after:debut",
 		"periode" => "required",
-		"debut" => "required",
-		"fin" => "required",
+		"debut" => "required|date_format:Y-m-d",
 		"etat" => "required",
 		"type" => "required",
 		"assurances" => "required",

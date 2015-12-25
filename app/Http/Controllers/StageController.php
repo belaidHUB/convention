@@ -11,6 +11,7 @@ use PDF;
 use DB;
 use Illuminate\Routing\UrlGenerator;
 use Mail;
+use Log;
 
 class StageController extends AppBaseController
 {
@@ -89,6 +90,7 @@ class StageController extends AppBaseController
         $input = $request->all();
 
 		$stage = $this->stageRepository->store($input);
+		Log::info('store'.$stage);
 	    Flash::message('Stage saved successfully.');
         return view('stages.imp')->with('stage', $stage);
 		//return redirect(route('stages.index'));
