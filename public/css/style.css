@@ -1,0 +1,47 @@
+.margin0{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.style-background{
+    background-color: rgba(254, 254, 254, 0.32);
+    border: solid rgba(255, 255, 255, 0.37) 4px;
+    margin-top: 1%;
+    height:400px;
+}
+.homepage{
+    background : url("../images/stage2.jpg") no-repeat center center ;
+    background-size:cover;
+}
+.btn-style-1{
+    color: #ffffff;
+    background-color: #A7D1C8;
+    border-color: #2ACCAA;
+}
+.btn-style-2{
+    color: #ffffff;
+    background-color: #D3A688;
+    border-color: #2ACCAA;
+}
+.btn-radius{
+   border-radius:0px ;
+}
+
+.btn-resp{
+    margin-top: 18%;
+}
+@media (max-width: 500px)  {
+    .text-resp{
+        font-size: 14px;
+    }
+    .btn-resp{
+        margin-top: 50%;
+        margin-left: 16%;
+    }
+    .btn-resp>.btn{
+        margin-top: 5px;
+    }
+}
+.btn-lg>a{
+    color: #ffffff;
+}

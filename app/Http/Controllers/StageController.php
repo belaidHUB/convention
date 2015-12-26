@@ -26,7 +26,7 @@ class StageController extends AppBaseController
 		$this->stageRepository = $stageRepo;
 		$this->url = $url;
 		//$this->middleware('auth',['only' => ['index','show','edit']]);
-		$this->middleware('auth',['except' => ['create','store']]);
+		$this->middleware('auth',['except' => ['create','store','Etudiant_index','serch_formation_Ajax']]);
 	}
 
 	/**
@@ -55,6 +55,12 @@ class StageController extends AppBaseController
         return view('stages.index', compact('stages', 'links'));
 	}
 
+	public function Etudiant_index()
+	{
+		$formations = DB::table('formations')->lists('nom','nom');
+        return view('stages.etudiant', compact('formations'));
+	}
+
 	public function serch_Ajax()
     {
         $Nom_serch = $_GET['Nom_serch'];
@@ -65,6 +71,26 @@ class StageController extends AppBaseController
         $data=view('stages.table', compact('links','stages'))->render();
         
         return response()->json($data);
+    }
+
+    public function serch_formation_Ajax(Request $request)
+    {
+    	$formations = DB::table('formations')->lists('nom','nom');
+    	if($request->ajax()){
+	        $formation_serch = $_GET['formation_serch'];
+	        $stages=DB::table('stages')->where('formation', '=',$formation_serch )->orderBy('updated_at','DESC')->paginate(8);
+	     
+	        $links = str_replace('/?', '?', $stages->render());
+	        $data=view('stages.table-serch', compact('links','stages','formations'))->render();
+        return response()->json($data);
+    }
+        else{
+        	$stages = DB::table('stages')->where('formation', '=',collect($formations)->first())->orderBy('etat','asc')->orderBy('updated_at','DESC')->paginate(8);
+		    
+		    $links = str_replace('/?', '?', $stages->render());
+            return view('stages.serch_stage', compact('stages', 'links','formations'));
+        }
+
     }
 
 	/**
