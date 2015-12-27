@@ -33,10 +33,6 @@
 
         @include('flash::message')
 
-        <div class="row">
-            <h1 class="pull-left">Stages</h1>
-        </div>
-
         <div >
            {!! Form::select('formation_serch',$formations,null, ['class' => 'form-control select-type']) !!}
         </div>

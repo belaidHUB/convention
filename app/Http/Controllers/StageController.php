@@ -26,7 +26,7 @@ class StageController extends AppBaseController
 		$this->stageRepository = $stageRepo;
 		$this->url = $url;
 		//$this->middleware('auth',['only' => ['index','show','edit']]);
-		$this->middleware('auth',['except' => ['create','store','Etudiant_index','serch_formation_Ajax']]);
+		$this->middleware('auth',['except' => ['create','store','Etudiant_index','serch_formation_Ajax','imprimer']]);
 	}
 
 	/**

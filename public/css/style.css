@@ -7,11 +7,12 @@
     background-color: rgba(254, 254, 254, 0.32);
     border: solid rgba(255, 255, 255, 0.37) 4px;
     margin-top: 1%;
-    height:400px;
+    /*min-height:400px ;*/
+    /*height:400px;*/
 }
 .homepage{
     background : url("../images/stage2.jpg") no-repeat center center ;
-    background-size:cover;
+    background-position-y: 54%;
 }
 .btn-style-1{
     color: #ffffff;
@@ -23,8 +24,18 @@
     background-color: #D3A688;
     border-color: #2ACCAA;
 }
+.btn-style-3{
+    color: #ffffff;
+    background-color: #395035;
+    border-color: #2ACCAA;
+}
+.btn-style-3:hover{
+    border: solid #006400 3px;
+    background-color: #ffffff;
+}
 .btn-radius{
    border-radius:0px ;
+
 }
 
 .btn-resp{
@@ -45,3 +56,4 @@
 .btn-lg>a{
     color: #ffffff;
 }
+

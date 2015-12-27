@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 
 Route::resource('stages', 'StageController');
 Route::get('serch_Ajax','StageController@serch_Ajax');
 Route::get('serch_stage','StageController@serch_formation_Ajax');
-Route::get('Etudiant','StageController@Etudiant_index');
+Route::get('/','StageController@Etudiant_index');
 
 
 Route::get('stages/{id}/delete', [

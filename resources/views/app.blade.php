@@ -21,7 +21,17 @@
 	</head>
 	<body class="homepage">
     <div class="container-fluid">
-	    @yield('content')
+        <div style="padding-top: 20px">
+            <img src="{{ url('images/uca.png')}}" class="center-block img-responsive" style="height: 100px" alt=""/>
+            <h1 class="text-center text-resp" style="color: #A25118">Faculté des Sciences et Techniques Marrakech</h1>
+        </div>
+
+        @yield('content')
+
+        <footer class="text-center " style="padding-top: 20px">
+            <img src="{{ url('images/club.png')}}" class="center-block img-responsive"/>
+            Copyright © 2015<a href="http://irisiclub.com/"> Irisi Club</a>
+        <footer>
     </div>
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
