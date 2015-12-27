@@ -55,9 +55,9 @@ Route::get('formations/{id}/delete', [
     };
 });*/
 //exemple2
-Route::get('home',['middleware'=>'auth', function () {
-    echo "welcome --".Auth::user()->email;
-}]);
+//Route::get('home',['middleware'=>'auth', function () {
+//    echo "welcome --".Auth::user()->email;
+//}]);
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

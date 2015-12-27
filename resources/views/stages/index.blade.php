@@ -35,8 +35,8 @@
 
         <div class="row">
             <h2 class="pull-left">Recherche par Nom</h2>
-            <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('stages.create') !!}">Add New</a>
-            <a class="btn btn-danger pull-right" style="margin-top: 25px" href="{{ url('auth/logout')}}">logout</a>
+            {{--<a class="btn btn-primary  pull-right" style="margin-top: 25px" href="{!! route('stages.create') !!}">Add New</a>--}}
+            <a class="btn btn-danger pull-right" style="margin-top: 25px" href="{{ url('auth/logout')}}">Deconnexion</a>
         </div>
 
         <div >

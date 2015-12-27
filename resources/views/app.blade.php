@@ -4,7 +4,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Title Page</title>
+		<title> Convention de stage</title>
+        <link rel="shortcut icon" href="{{ url('images/club16.png')}}"  />
+
 
         {{--style CSS--}}
         <link href="{{ url('css/style.css')}}" rel="stylesheet">

@@ -1,7 +1,9 @@
 @extends('app')
 
 @section('content')
-<div class="container">
+
+ <div class="style-background" style=" min-height:430px ;font-weight: bold;padding: 20px">
+  <div class="row">
     
 	<div class="form-group col-sm-4 col-lg-4">
 	    {!! Form::label('nom', 'Nom:') !!}
@@ -31,17 +33,12 @@
 	    {!! $stage->formation!!}
 	</div>
 
+    <div class="form-group col-sm-4 col-lg-4">
+        {!! Form::label('organisme', "Nom De L'Organisme") !!}
+        {!! $stage->organisme!!}
+    </div>
 
-	<div class="form-group col-sm-4 col-lg-4">
-	    {!! Form::label('portable', 'Portable Personal:') !!}
-	    {!! $stage->portable!!}
-	</div>
 
-
-	<div class="form-group col-sm-4 col-lg-4">
-	    {!! Form::label('organisme', "Nom De L'Organisme") !!}
-	    {!! $stage->organisme!!}
-	</div>
 
 
 	<div class="form-group col-sm-4 col-lg-4">
@@ -56,7 +53,10 @@
 	</div>
 
 
-
+      <div class="form-group col-sm-4 col-lg-4">
+          {!! Form::label('portable',"Fax De L'Organisme:") !!}
+          {!! $stage->portable!!}
+      </div>
 
 	<div class="form-group col-sm-4 col-lg-4">
 	    {!! Form::label('periode', 'Periode De Stage en Jour:') !!}
@@ -84,10 +84,10 @@
 	    {!! $stage->assurances!!}
 	</div>
 
-	<div class="form-group col-sm-4 col-lg-4">
-	    {!! Form::label('etat', 'Etat:') !!}
-	    {!! $stage->etat!!}
-	</div>
+	{{--<div class="form-group col-sm-4 col-lg-4">--}}
+	    {{--{!! Form::label('etat', 'Etat:') !!}--}}
+	    {{--{!! $stage->etat!!}--}}
+	{{--</div>--}}
 
 	<div class="form-group col-sm-4 col-lg-4">
 	    {!! Form::label('created_at', 'Date de Création:') !!}
@@ -101,5 +101,6 @@
 
 	
 
+</div>
 </div>
 @endsection
