@@ -4,14 +4,16 @@
 }
 
 .style-background{
-    background-color: rgba(254, 254, 254, 0.32);
+    /*background-color: rgba(254, 254, 254, 0.32);*/
+    background-color: rgba(254, 254, 254, 0.68);
     border: solid rgba(255, 255, 255, 0.37) 4px;
     margin-top: 1%;
     /*min-height:400px ;*/
     /*height:400px;*/
 }
 .homepage{
-    background : url("../images/stage2.jpg") no-repeat center center ;
+    /*background-color: #EBC9B5;*/
+    background : url("../images/stage2.jpg") no-repeat #EBC9B5 center center ;
     background-position-y: 54%;
 }
 .btn-style-1{

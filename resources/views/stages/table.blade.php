@@ -1,24 +1,17 @@
-<div class="row">
+<div class="style-background" style=" min-height:430px ;font-weight: bold ;">
+
+    <div class="">
             @if($stages->isEmpty())
                 <div class="well text-center">No Stages found.</div>
             @else
                 <table class="table">
                     <thead>
                     <th>Nom</th>
-			<th>Prenom</th>
-			<th>Cne</th>
-			<th>Organisme</th>
-			<th>Adresse</th>
-			<th>Tel Org</th>
-			<th>Portable</th>
-			<th>Periode</th>
-			<th>Debut</th>
-			<th>Fin</th>
-			<th>Etat</th>
-			<th>Type</th>
-			<th>Assurances</th>
-			<th>Email</th>
-			<th>Formation</th>
+                    <th>Prenom</th>
+                    <th>Organisme</th>
+                    <th>Etat</th>
+                    <th>Type</th>
+                    <th>Formation</th>
                     <th width="50px">Action</th>
                     </thead>
                     <tbody>
@@ -27,14 +20,7 @@
                         <tr>
                     <td>{!! $stage->nom !!}</td>
 					<td>{!! $stage->prenom !!}</td>
-					<td>{!! $stage->cne !!}</td>
 					<td>{!! $stage->organisme !!}</td>
-					<td>{!! $stage->adresse !!}</td>
-					<td>{!! $stage->tel_org !!}</td>
-					<td>{!! $stage->portable !!}</td>
-					<td>{!! $stage->periode !!}</td>
-					<td>{!! $stage->debut !!}</td>
-					<td>{!! $stage->fin !!}</td>
 					<td>
                     @if($stage->etat==0)
                          <a href="{!! route('stages.update_etat', [$stage->id]) !!}"><span style="color: #FF0000" class="glyphicon glyphicon-refresh"></span></a>
@@ -47,8 +33,6 @@
                     @endif 
                     </td>
 					<td>{!! $stage->type !!}</td>
-					<td>{!! $stage->assurances !!}</td>
-					<td>{!! $stage->email !!}</td>
 					<td>{!! $stage->formation !!}</td>
                             <td>
                                 <a href="{!! route('stages.edit', [$stage->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
@@ -62,4 +46,6 @@
                 </table>
                 <div class="align-center">{!! $links !!}</div>
             @endif
+</div>
+
 </div>

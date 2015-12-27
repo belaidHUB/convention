@@ -21,7 +21,7 @@
                     $(".ajax-table").html(data);
                 },error: function(data)
                 {
-                    alert("Probleme serveur FSTG!!");
+//                    alert("Probleme serveur FSTG!!");
                 }
             });
         });
@@ -34,7 +34,7 @@
         @include('flash::message')
 
         <div class="row">
-            <h1 class="pull-left">Stages</h1>
+            <h2 class="pull-left">Recherche par Nom</h2>
             <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('stages.create') !!}">Add New</a>
             <a class="btn btn-danger pull-right" style="margin-top: 25px" href="{{ url('auth/logout')}}">logout</a>
         </div>

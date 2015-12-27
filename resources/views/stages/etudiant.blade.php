@@ -8,7 +8,7 @@
      {{--</div>--}}
 
      <div class="row">
-         <div class="col-md-offset-2  col-md-8 style-background" style="min-height: 365px">
+         <div class="col-md-offset-2  col-md-8 style-background" style="min-height: 365px;background-color: rgba(254, 254, 254, 0.32);">
              <div class="btn-resp">
              <button type="button" class="btn btn-lg  btn-style-1" style="border-radius: inherit;">
                  <a href="{!! route('stages.create') !!}">
