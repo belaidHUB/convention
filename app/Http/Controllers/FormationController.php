@@ -17,6 +17,7 @@ class FormationController extends AppBaseController
 	function __construct(FormationRepository $formationRepo)
 	{
 		$this->formationRepository = $formationRepo;
+		$this->middleware('auth');
 	}
 
 	/**
