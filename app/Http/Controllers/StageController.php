@@ -537,9 +537,9 @@ class StageController extends AppBaseController
                                          
                                      
 
-															Lu et approuvé
-															Le stagiaire : 
-															…………, le………….
+			                                                  Lu et approuvé
+			                                                  Le stagiaire : 
+			                                                   …………, le………….
                           
 
                                         
@@ -548,12 +548,11 @@ class StageController extends AppBaseController
 			………………, le………….
                                                 
                                          
+                                                            Pour l’établissement,
+												 
 
-			Pour l’établissement,
- 
-
-			Le Responsable de stage						 Le Doyen
-			………………, le…………						…………, le…………
+                                                            Le Responsable de stage						 Le Doyen
+                                                            ………………, le…………						            …………, le…………
                                                   
 
 			</p>
