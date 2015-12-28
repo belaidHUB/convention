@@ -45,9 +45,11 @@ Route::get('formations/{id}/delete', [
     'as' => 'formations.delete',
     'uses' => 'FormationController@destroy',
 ]);
+Route::get('admin', function () {
+        return Redirect::to('stages');
+});
 //exemple1
-/*Route::get('home', function () {
-	if(Auth::guest()){
+/*	if(Auth::guest()){
 		return Redirect::to('auth/login');
 	}
 	else{
@@ -67,3 +69,18 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::resource('anneeUniversitaires', 'annee_universitaireController');
+
+Route::get('anneeUniversitaires/{id}/delete', [
+    'as' => 'anneeUniversitaires.delete',
+    'uses' => 'annee_universitaireController@destroy',
+]);
+
+
+Route::resource('anneeUs', 'anneeUController');
+
+Route::get('anneeUs/{id}/delete', [
+    'as' => 'anneeUs.delete',
+    'uses' => 'anneeUController@destroy',
+]);

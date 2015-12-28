@@ -8,10 +8,10 @@
 
         <div class="row">
             <h1 class="pull-left">Formations</h1>
-            <a class="btn btn-primary pull-right" style="margin-top: 25px" href="{!! route('formations.create') !!}">Add New</a>
+            <a class="btn btn-primary pull-right" style="border-radius:0px ;margin-top: 25px" href="{!! route('formations.create') !!}">Ajouter Formations</a>
         </div>
 
-        <div class="row">
+        <div class="row" style="">
             @if($formations->isEmpty())
                 <div class="well text-center">No Formations found.</div>
             @else
@@ -27,7 +27,7 @@
                             <td>{!! $formation->nom !!}</td>
                             <td>
                                 <a href="{!! route('formations.edit', [$formation->id]) !!}"><i class="glyphicon glyphicon-edit"></i></a>
-                                <a href="{!! route('formations.delete', [$formation->id]) !!}" onclick="return confirm('Are you sure wants to delete this Formation?')"><i class="glyphicon glyphicon-remove"></i></a>
+                                <!--a href="{!! route('formations.delete', [$formation->id]) !!}" onclick="return confirm('Are you sure wants to delete this Formation?')"><i class="glyphicon glyphicon-remove"></i></a-->
                             </td>
                         </tr>
                     @endforeach

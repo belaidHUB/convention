@@ -49,10 +49,10 @@ class StageController extends AppBaseController
 		return view('stages.index')
 		    ->with('stages', $stages)
 		    ->with('attributes', $attributes);*/
-
+        $anneU = DB::table('annee_us')->where('id',1)->first()->anneeUn;
 		$stages = DB::table('stages')->orderBy('etat','asc')->orderBy('updated_at','DESC')->paginate(8);
 		$links = str_replace('/?', '?', $stages->render());
-        return view('stages.index', compact('stages', 'links'));
+        return view('stages.index', compact('stages', 'links','anneU'));
 	}
 
 	public function Etudiant_index()
@@ -254,8 +254,9 @@ class StageController extends AppBaseController
 		$stage = $this->stageRepository->findStageById($id);
 		$img1=$this->url->to('/')."/images/fstg.png";
 		$img2=$this->url->to('/')."/images/fstg2.png";
-		
-       
+		$anneU = DB::table('annee_us')->where('id',1)->first()->anneeUn;
+
+
 		$html='
 		    <meta charset="UTF-8">
 		    <img src="'.$img1.'" alt="CadiAyyadUniversity"  style="width: 100%"><br>
@@ -290,7 +291,7 @@ class StageController extends AppBaseController
 
 		       Elle concerne :
 		       Mr/Mlle : '.$stage->prenom.' '.$stage->nom.'
-		       Etudiant(e) régulièrement inscrit (e) dans l’établissement pour l’année universitaire 2014/2015 et dont la 
+		       Etudiant(e) régulièrement inscrit (e) dans l’établissement pour l’année universitaire '.$anneU.' et dont la 
 		       carte d’étudiant porte le numéro du CNE suivant :'.$stage->cne.'
 		       Et dénommé ci-après le stagiaire.
                
@@ -348,7 +349,7 @@ class StageController extends AppBaseController
               
 
 				 Article 8 :
-				 Le stage est d’une durée d’un '.$stage->periode.'  Mois  et se déroulera du  '.$stage->debut.'   au   '.$stage->fin.'.
+				 Le stage est d’une durée d’un '.$stage->periode.'  Jours  et se déroulera du  '.$stage->debut.'   au   '.$stage->fin.'.
       
       
       
@@ -412,7 +413,7 @@ class StageController extends AppBaseController
 
                 
 			Elle concerne : '.$stage->prenom.' '.$stage->nom.'
-			Étudiant(e) régulièrement inscrit(e) dans l’établissement pour l’année universitaire 2015/2016 et dont la
+			Étudiant(e) régulièrement inscrit(e) dans l’établissement pour l’année universitaire '.$anneU.' et dont la
 			 carte d’étudiant porte le numéro du CNE suivant : '.$stage->cne.'
 			Et dénommé ci-après le stagiaire.
 
@@ -426,7 +427,7 @@ class StageController extends AppBaseController
              
 
 			Article 3 : Lieu et période du stage
-			Le stage d’une durée de '.$stage->periode.' mois  et se déroulera du  '.$stage->debut.'   au   '.$stage->fin.' .
+			Le stage d’une durée de '.$stage->periode.' Jours  et se déroulera du  '.$stage->debut.'   au   '.$stage->fin.' .
                           
                          
             </p>
