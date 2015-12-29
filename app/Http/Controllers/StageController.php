@@ -252,8 +252,8 @@ class StageController extends AppBaseController
 	public function imprimer($id)
 	{ 
 		$stage = $this->stageRepository->findStageById($id);
-		$img1=$this->url->to('/')."/images/fstg.png";
-		$img2=$this->url->to('/')."/images/fstg2.png";
+		$img1="https://irisi.shost.ca/convention/images/fstg.png";
+		$img2="https://irisi.shost.ca/convention/images/fstg2.png";
 		$anneU = DB::table('annee_us')->where('id',1)->first()->anneeUn;
 
 
