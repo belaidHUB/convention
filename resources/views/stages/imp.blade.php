@@ -14,7 +14,7 @@
                        <li> - Le responsable de filière.</li>
                    </ul>
                 </li>
-                <li>3- Rendez-vous à la cellule de communication et déposez les 3 copies.</li>
+                <li>3- Rendez-vous à <b>la cellule de communication</b> et déposez les 3 copies.</li>
                 <li>4- Après que vos copies soient signées par M. Le doyen, <b>vous recevrez un email de notification.</b></li>
                 <li>5- Rendez-vous après à la cellule de communication pour récupérer vos copies.</li>
             </ul>

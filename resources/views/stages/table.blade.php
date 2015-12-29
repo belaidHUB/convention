@@ -7,7 +7,7 @@
                 <table class="table">
                     <thead>
                     <th>Nom</th>
-                    <th>Prenom</th>
+                    <th>Prénom</th>
                     <th>Organisme</th>
                     <th>Etat</th>
                     <th>Type</th>

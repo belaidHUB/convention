@@ -38,7 +38,7 @@
             {{--<a class="btn btn-primary  pull-right" style="margin-top: 25px" href="{!! route('stages.create') !!}">Add New</a>--}}
             <a class="btn btn-danger pull-right" style="margin-top: 25px;margin-right: 15px;border-radius:0px ;margin-left: 10px;" href="{{ url('auth/logout')}}">Deconnexion</a>
             <a class="btn btn-primary  pull-right" style="margin-top: 25px;border-radius:0px ;" href="{!! url('anneeUs/1/edit') !!}">l’année universitaire <b>{!!$anneU!!}</b></a>
-            <a class="btn btn-success  pull-right" style="margin-top: 25px;margin-right: 10px;border-radius:0px ;" href="{!! route('formations.index') !!}">Les Formation </a>
+            <a class="btn btn-success  pull-right" style="margin-top: 25px;margin-right: 10px;border-radius:0px ;" href="{!! route('formations.index') !!}">Les Formations </a>
             
         </div>
 

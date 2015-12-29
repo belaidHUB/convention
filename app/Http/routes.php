@@ -48,18 +48,7 @@ Route::get('formations/{id}/delete', [
 Route::get('admin', function () {
         return Redirect::to('stages');
 });
-//exemple1
-/*	if(Auth::guest()){
-		return Redirect::to('auth/login');
-	}
-	else{
-    echo "welcome --".Auth::user()->email;
-    };
-});*/
-//exemple2
-//Route::get('home',['middleware'=>'auth', function () {
-//    echo "welcome --".Auth::user()->email;
-//}]);
+
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

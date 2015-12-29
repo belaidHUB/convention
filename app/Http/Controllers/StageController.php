@@ -388,7 +388,7 @@ class StageController extends AppBaseController
 				 ';
 				 }
 		 else{
-		 	$html.='pfe
+		 	$html.='
 		 	<p style="white-space: pre;font-size: 16px">
 			Article 1 : Objet de la convention
 			La présente convention de stage a pour objet de  régler les rapports entre :
