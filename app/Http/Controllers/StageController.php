@@ -78,17 +78,17 @@ class StageController extends AppBaseController
     	$formations = DB::table('formations')->lists('nom','nom');
     	if($request->ajax()){
 	        $formation_serch = $_GET['formation_serch'];
-	        $stages=DB::table('stages')->where('formation', '=',$formation_serch )->orderBy('updated_at','DESC')->paginate(8);
+	        $stages=DB::table('stages')->where('formation', '=',$formation_serch )->orderBy('updated_at','DESC')->paginate(1000000000);
 	     
-	        $links = str_replace('/?', '?', $stages->render());
-	        $data=view('stages.table-serch', compact('links','stages','formations'))->render();
+	       //$links = str_replace('/?', '?', $stages->render());
+	        $data=view('stages.table-serch', compact('stages','formations'))->render();
         return response()->json($data);
     }
         else{
-        	$stages = DB::table('stages')->where('formation', '=',collect($formations)->first())->orderBy('etat','asc')->orderBy('updated_at','DESC')->paginate(8);
+        	$stages = DB::table('stages')->where('formation', '=',collect($formations)->first())->orderBy('etat','asc')->orderBy('updated_at','DESC')->paginate(1000000000);
 		    
-		    $links = str_replace('/?', '?', $stages->render());
-            return view('stages.serch_stage', compact('stages', 'links','formations'));
+		    //$links = str_replace('/?', '?', $stages->render());
+            return view('stages.serch_stage', compact('stages','formations'));
         }
 
     }

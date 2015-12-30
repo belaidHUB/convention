@@ -2,8 +2,9 @@
             @if($stages->isEmpty())
                 <div class="well text-center">No Stages found.</div>
             @else
-                <table class="table text-center">
+                <table class="table">
                     <thead class="alert-success">
+                        <th>N° </th>
             			<th>Organisme</th>
             			<th>Adresse</th>
             			<th>Tel Organisme</th>
@@ -14,16 +15,18 @@
                     <tbody>    
                     @foreach($stages as $stage)
                         <tr>
+                            <td>{!! $stage->id !!}</td>
         					<td>{!! $stage->organisme !!}</td>
         					<td>{!! $stage->adresse !!}</td>
         					<td>{!! $stage->tel_org !!}</td>
         					<td>{!! $stage->portable !!}</td>
         					<td>{!! $stage->type !!}</td>
-        					<td>{!! $stage->formation !!}</td>
+        					<td style="    font-size: 10px;color: red;">
+                                 {!! $stage->formation !!}</td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
-                <div class="align-center">{!! $links !!}</div>
+              
             @endif
 </div>

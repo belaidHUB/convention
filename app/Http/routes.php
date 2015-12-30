@@ -18,7 +18,7 @@
 
 Route::resource('stages', 'StageController');
 Route::get('serch_Ajax','StageController@serch_Ajax');
-Route::get('serch_stage','StageController@serch_formation_Ajax');
+Route::get('search_stage','StageController@serch_formation_Ajax');
 Route::get('/','StageController@Etudiant_index');
 
 

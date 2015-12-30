@@ -10,7 +10,7 @@
             /*alert("The paragraph was clicked."+formation_serch);*/
             /*$(".ajax-table").html('<div class="ajax-image"><img src="{{ url('images/ajax3.GIF') }}" lt=""/><div>');*/
             $.ajax({
-                url:'{{URL::to("serch_stage")}}',
+                url:'{{URL::to("search_stage")}}',
                 dataType:'json',
                 type:'get',
                 data:{formation_serch:formation_serch},

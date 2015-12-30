@@ -17,7 +17,7 @@
                  </a>
              </button>
              <button type="button" class="btn btn-lg btn-style-2" style="border-radius: inherit;">
-                 <a href="{{ url('serch_stage')}}">
+                 <a href="{{ url('search_stage')}}">
                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                  recherche de stage</button>
                  </a>
