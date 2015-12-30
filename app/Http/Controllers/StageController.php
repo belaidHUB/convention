@@ -78,14 +78,14 @@ class StageController extends AppBaseController
     	$formations = DB::table('formations')->lists('nom','nom');
     	if($request->ajax()){
 	        $formation_serch = $_GET['formation_serch'];
-	        $stages=DB::table('stages')->where('formation', '=',$formation_serch )->orderBy('updated_at','DESC')->paginate(1000000000);
+	        $stages=DB::table('stages')->where('formation', '=',$formation_serch )->orderBy('updated_at','DESC')->paginate(100000);
 	     
 	       //$links = str_replace('/?', '?', $stages->render());
 	        $data=view('stages.table-serch', compact('stages','formations'))->render();
         return response()->json($data);
     }
         else{
-        	$stages = DB::table('stages')->where('formation', '=',collect($formations)->first())->orderBy('etat','asc')->orderBy('updated_at','DESC')->paginate(1000000000);
+        	$stages = DB::table('stages')->where('formation', '=',collect($formations)->first())->orderBy('etat','asc')->orderBy('updated_at','DESC')->paginate(100000);
 		    
 		    //$links = str_replace('/?', '?', $stages->render());
             return view('stages.serch_stage', compact('stages','formations'));
@@ -116,6 +116,19 @@ class StageController extends AppBaseController
         $input = $request->all();
 
 		$stage = $this->stageRepository->store($input);
+		  // send email                
+				Flash::success('message envoyé.'.$stage->nom.' '.$stage->prenom);
+				//$email=$stage->email;
+				//$id=$stage->id;
+				$pdf="https://irisi.shost.ca/convention/stages/".$stage->id."/imprimer";
+				Mail::send('emails.pdf', ['stage' => $stage,'pdf' => $pdf], function($message) use ($stage,$pdf)
+				{
+					$pdf="https://irisi.shost.ca/convention/stages/".$stage->id."/imprimer";
+					
+	
+					$message->to($stage->email)->subject('Votre Convention de stage est prête');
+				});
+		  //fin send email
 		Log::info('store'.$stage);
 	    Flash::message('Stage saved successfully.');
         return view('stages.imp')->with('stage', $stage);
