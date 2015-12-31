@@ -61,7 +61,7 @@
 
     <!--- Periode Field --->
     <div class="form-group col-sm-6 col-lg-4">
-        {!! Form::label('periode', 'Période de stage en jours:') !!}
+        {!! Form::label('periode', 'Période de stage en * jours:') !!}
         {!! Form::text('periode', null, ['class' => 'form-control']) !!}
     </div>
 

@@ -126,7 +126,7 @@ class StageController extends AppBaseController
 					$pdf="https://irisi.shost.ca/convention/stages/".$stage->id."/imprimer";
 					
 	
-					$message->to($stage->email)->subject('Votre Convention de stage est prête');
+					$message->to($stage->email)->subject('Convention de stage');
 				});
 		  //fin send email
 		Log::info('store'.$stage);
@@ -294,18 +294,19 @@ class StageController extends AppBaseController
                
 
 		       -	et d’autre part
-		       Nom                    : '.$stage->organisme.'
-		       Adresse               : '.$stage->adresse.'
-		       Téléphone           : '.$stage->tel_org.'
-		       Fax                      : '.$stage->portable.'
+
+		       Nom                    :  <b> '.$stage->organisme.'</b>
+		       Adresse               :  <b> '.$stage->adresse.'</b>
+		       Téléphone           :  <b> '.$stage->tel_org.'</b>
+		       Fax                      :  <b> '.$stage->portable.'</b>
 		       Représenté par :
 		       Et désigné ci-après par l’entreprise.
                               
 
 		       Elle concerne :
-		       Mr/Mlle : '.$stage->prenom.' '.$stage->nom.'
-		       Etudiant(e) régulièrement inscrit (e) dans l’établissement pour l’année universitaire '.$anneU.' et dont la 
-		       carte d’étudiant porte le numéro du CNE suivant :'.$stage->cne.'
+		       Mr/Mlle : <b>'.$stage->prenom.' '.$stage->nom.'</b>
+		       Etudiant(e) régulièrement inscrit (e) dans l’établissement pour l’année universitaire '. $anneU.' et dont la
+		       carte d’étudiant porte le numéro du CNE suivant : <b> '.$stage->cne.'</b>
 		       Et dénommé ci-après le stagiaire.
                
 
@@ -327,7 +328,7 @@ class StageController extends AppBaseController
 
 
 
-               <p style="-webkit-transform: rotate(90deg);font-size: 12px">'.$stage->assurances.date("my").'</p>
+               <p style="-webkit-transform: rotate(90deg);font-size: 10px">'.$stage->assurances.date("my").'</p>
                <p style="text-align: right">1/2</p>
 		       <img src="'.$img2.'" alt="CadiAyyadUniversity"  style="width: 100%"><br>
 		       
@@ -362,8 +363,9 @@ class StageController extends AppBaseController
               
 
 				 Article 8 :
-				 Le stage est d’une durée d’un '.$stage->periode.'  Jours  et se déroulera du  '.$stage->debut.'   au   '.$stage->fin.'.
-      
+				 <b>
+				 Le stage est d’une durée d’un '.$stage->periode.' Jours et se déroulera du '.$stage->debut.'   au   '.$stage->fin.'.
+                 </b>
       
       
       
@@ -394,7 +396,7 @@ class StageController extends AppBaseController
       
       					                                        
       
-                  <p style="-webkit-transform: rotate(90deg);font-size: 12px">'.$stage->assurances.date("my").'</p>
+                  <p style="-webkit-transform: rotate(90deg);font-size: 10px">'.$stage->assurances.date("my").'</p>
                   <p style="text-align: right">2/2</p>
                   <img src="'.$img2.'" alt="CadiAyyadUniversity"  style="width: 100%"><br>
 				 </p>
@@ -417,17 +419,16 @@ class StageController extends AppBaseController
 
               
 			- L’Organisme ci-dessous mentionné :
-			Nom		   : '.$stage->organisme.'
-			Adresse	   :  '.$stage->adresse.'
-			Téléphone	   : '.$stage->tel_org.'
-			Fax		   : '.$stage->portable.'
+
+			Nom		   :       <b> ' .$stage->organisme.'</b>
+			Adresse	   :       <b> ' .$stage->adresse.'</b>
+			Téléphone	   :       <b> ' .$stage->tel_org.'</b>
+			Fax		   :      <b> ' .$stage->portable.'</b>
 			Représenté par :
 			Et désigné ci-après par l’Organisme.
-
-                
-			Elle concerne : '.$stage->prenom.' '.$stage->nom.'
+			Elle concerne : <b> ' .$stage->prenom.' '.$stage->nom.'</b>
 			Étudiant(e) régulièrement inscrit(e) dans l’établissement pour l’année universitaire '.$anneU.' et dont la
-			 carte d’étudiant porte le numéro du CNE suivant : '.$stage->cne.'
+			 carte d’étudiant porte le numéro du CNE suivant :    <b>'.$stage->cne.'</b>
 			Et dénommé ci-après le stagiaire.
 
               
@@ -440,21 +441,20 @@ class StageController extends AppBaseController
              
 
 			Article 3 : Lieu et période du stage
-			Le stage d’une durée de '.$stage->periode.' Jours  et se déroulera du  '.$stage->debut.'   au   '.$stage->fin.' .
-                          
+			<b>
+			Le stage d’une durée de '.$stage->periode.' Jours  et se déroulera du '.$stage->debut.'   au   '.$stage->fin.'.
+            </b>      
                          
             </p>
 
-            <p style="-webkit-transform: rotate(90deg);font-size: 12px">'.$stage->assurances.date("my").'</p>
+            <p style="-webkit-transform: rotate(90deg);font-size: 10px">'.$stage->assurances.date("my").'</p>
             <p style="text-align: right">1/3</p>
-            <p style="white-space: pre;font-size: 16px;border-top: 1px solid #000">Convention de stage FSTG/'.$stage->organisme.'                                                                 -Etudiant –'.$stage->prenom.' '.$stage->nom.'</p>
+            <p style="white-space: pre;font-size: 16px;border-top: 1px solid #000">Convention de stage FSTG/<b>'.$stage->organisme.'</b>                                                                 -Etudiant –<b>'.$stage->prenom.' '.$stage->nom.'</b></p>
 		 	';
 
 		 	 $html.='
 			<div style="page-break-after: always"></div>
 			<p style="white-space: pre;font-size: 16px">
-                                         
-
 			Article 4 : Statut du stagiaire – Accueil et encadrement
 			L’étudiant, pendant la durée de son stage dans l’Organisme, demeure étudiant de l’Établissement ; il est 
 			suivi régulièrement par l’Établissement. L’Organisme nomme un Encadrant chargé d’assurer le suivi 
@@ -480,7 +480,8 @@ class StageController extends AppBaseController
 			Article 6 : Gratification 
 			L’étudiant ne peut prétendre à rémunération, cependant il peut bénéficier d’une gratification. 
 			Les frais de déplacement et d’hébergement engagés par l’étudiant à la demande de l’Organisme, ainsi 
-			que les frais de formation éventuellement nécessités par le stage, seront intégralement pris en charge par l’Organisme selon les modalités qui y sont en vigueur.
+			que les frais de formation éventuellement nécessités par le stage, seront intégralement pris en charge par
+			l’Organisme selon les modalités qui y sont en vigueur.
                                       
 
 			Article 7 : Responsabilité civile et assurances
@@ -506,9 +507,9 @@ class StageController extends AppBaseController
 			sera susceptible de fournir un rapport. Ce rapport ainsi que les éventuels travaux associés pourront être
 			présentés lors d’une soutenance.
 		    </p>
-            <p style="-webkit-transform: rotate(90deg);font-size: 12px">'.$stage->assurances.date("my").'</p>
+            <p style="-webkit-transform: rotate(90deg);font-size: 10px">'.$stage->assurances.date("my").'</p>
             <p style="text-align: right">2/3</p>
-            <p style="white-space: pre;font-size: 16px;border-top: 1px solid #000">Convention de stage FSTG/'.$stage->organisme.'                                                                 -Etudiant –'.$stage->prenom.' '.$stage->nom.'</p>  
+            <p style="white-space: pre;font-size: 16px;border-top: 1px solid #000">Convention de stage FSTG/<b>'.$stage->organisme.'</b>                                                                -Etudiant –<b>'.$stage->prenom.' '.$stage->nom.'</b></p>  
 		    ';
 
 		 	$html.='
@@ -564,12 +565,12 @@ class StageController extends AppBaseController
                                                             Pour l’établissement,
 												 
 
-                                                            Le Responsable de stage						 Le Doyen
-                                                            ………………, le…………						            …………, le…………
+                                                            Le Responsable de stage	                       Le Doyen
+                                                            ………………, le…………	                                …………, le…………
                                                   
 
 			</p>
-            <p style="-webkit-transform: rotate(90deg);font-size: 12px">'.$stage->assurances.date("my").'</p>
+            <p style="-webkit-transform: rotate(90deg);font-size: 10px">'.$stage->assurances.date("my").'</p>
             <p style="text-align: right">3/3</p>
             <p style="white-space: pre;font-size: 16px;border-top: 1px solid #000">Convention de stage FSTG/'.$stage->organisme.'                                                                 -Etudiant –'.$stage->prenom.' '.$stage->nom.'</p>
 			';
